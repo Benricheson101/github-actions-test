@@ -1,9 +1,9 @@
 on:
   push:
     branches: [main]
-
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   plan:
@@ -11,3 +11,10 @@ jobs:
     steps:
       - name: plan
         run: echo plan
+
+  apply:
+    runs-on: ubuntu-latest
+    environment: lab
+    steps:
+      - name: apply
+        run: echo applying now
